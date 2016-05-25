@@ -1,0 +1,67 @@
+<ion-view view-title="">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+            <div class="item item-avatar">
+                <img src="img/logo.png">
+                <h2Add Assets</h2>
+              
+            </div>
+            <div class="item item-body">
+               <label class="item item-input item-stacked-label">
+                    <span class="input-label">Location</span>
+                    <span class="input-label"></span>
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label defineSizeClass">Movement Type</span>
+	                <select id="select_movement_type defineSizeClass">
+                      <option selected>All</option>
+                      <option>Internal</option>
+                      <option>Donated</option>
+                      <option>purchased</option>
+                  </select>
+                </label>
+                
+                <ul class="tab">
+  <li><a href="#/app/checkAssets" class="tablinks defineSizeClass button_style_class" ng-click="openCity(event, 'asset_details')">Details</a></li>
+  <li><a href="#/app/checkAssets" class="tablinks defineSizeClass button_style_class" ng-click="openCity(event, 'see_report')">Report</a></li>
+</ul>
+
+<div id="asset_details" class="tabcontent">
+  <table style="width:100%">
+  <tr>
+    <th>Asset type</th>
+    <th>Quantity</th>  
+    <th>Recieved by</th>
+  </tr>
+  <tr>
+    <td>laptop</td>
+    <td>36</td>  
+    <td>Donated</td>
+  </tr>
+</table>
+</div>
+
+<!--<div id="see_report" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>-->
+<div id="see_report" style="width: 280px; height: 350px;">
+</div>
+            
+            </div>
+        </div>
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

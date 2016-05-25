@@ -1,0 +1,53 @@
+<ion-view view-title="">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+
+                <div class="text-right">
+                    <img src="img/logo.png" id="imglogo">    
+                    <p>                
+                    <a href="mailto:hope_foundation@hopeww.org" class="subdued"><i class="ion-email"></i></a>
+                    <a href="https://www.hopefoundation.org.in/index.php" class="subdued" ></a>
+                    </p></div> 
+
+        <div class="list card">
+              <div class="item item-text-wrap">
+               <em>Select any location to track assets</em>
+            </div>  
+        </div>
+            <div class="row">
+                 
+                <div class="col">
+                    <figure>
+                    <a><img src="img/bangalore.jpg" alt='missing'
+                    ng-click="locSelected('Bangalore')">   
+                        </a>
+                    <figcaption>Bangalore</figcaption>    
+                    </figure>                    
+                   </div>
+                
+                <div class="col">
+                    <figure>
+                    <img src="img/hyderabad.jpg" alt='missing'>
+                    <figcaption>Hyderabad</figcaption>    
+                    </figure>
+                    </div>  
+                </div>
+            <div class="row">    
+                 <div class="col">
+                     <figure>
+                     <img src="img/delhi.jpg">
+                     <figcaption>Delhi</figcaption>    
+                     </figure>
+                         </div>
+           </div>        
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

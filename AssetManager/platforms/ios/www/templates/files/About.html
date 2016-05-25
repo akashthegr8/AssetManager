@@ -1,0 +1,56 @@
+<ion-view view-title="About Asset Tracker">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+            <div class="item item-body">
+                <p><b>Asset Management</b></p>
+                <p>HOPE Foundation has many training centers across its branches in India. They frequently deal with several assets like laptops, desktops, sewing machines, projectors, monitors, accessories and other electronic goods. This application helps track ANY movable assets. The intuitive nature of the UI helps the user to create and maintain asset movements, scan equipments and track asset availability at a given location at any given point in time.</p>  
+                    
+                <p><b>Bar/QR code scanner</b></p>                   
+                <p>The user can scan the bar code or the QR code of every asset or equipment that a branch houses as a result of internal movement between branches or purchased from a vendor or donated. Every asset scanned can be categorised under different equipment type that HOPE foundation houses and uses. Equipments can also be categorised as purchased or donated.</p>
+                    
+                <p><b>Movements</b></p>                 
+                <p>The user can trigger asset movements as transactions from one branch to another within HOPE. Such transactions have location details like moved from and moved to, date of movement and status of movement like shipped/in transit/received. The transaction also supports multiple asset type movements with no retrictions on quantity. It is also possible to maintain the status of working conditions of items.                     
+                Once created the user can read and check the transactions. Once the delivery of the items is carried out the statuses of movement transactions change suitably.</p>
+                    
+                <p>The application also helps the user view a list of all movements created and maintained at one place.                
+                </p>
+                
+                <p><b>Asset tracking report</b></p>                
+                <p>The user can at any given point of time check and track the number of assets housed at a given branch based on the type of asset. The user can also track all those assets housed at a location that were internally moved or donated or purchased.</p>                
+              
+                <p><b>Miscellaneous and Future scope</b></p>                   
+                <p>The application also provides flexibility to scale to larger volumes of data, dynamic selection of dates to view the asset tracking report and the below features-
+                    <br> 
+                    <br> -> Add new donors and suppliers
+                    <br> -> Edit movement transactions
+                    <br> -> Cancel movements after shipment
+                    <br> -> Removing items from the movement before it is delivered
+                    <br> -> Returns of equipments
+                    <br> -> Send equipments for repair
+                    <br> -> Synchronous communication to users on statuses of mvoements
+                    <br> -> Integration with finance system in cases of purhcased equipments</p>
+                    <br> -> Report to check individual assets housed at a location based on type of asset and whether purchased/donated/internally moved
+                
+                <p><b>About HOPE </b></p>
+                <p>HOPE foundation is a non-sectarian charity established in 1991.</p>
+                    
+                <p>It works to bring about change in the lives of children, young people and vulnerable individuals. It educates children, provides healthcare and trains young people and women in skills for livelihoods.</p>
+
+                <p>The foundation team of 550 people and many more volunteers and partners work in 26 cities in India through over 100 programs and community-based services.</p>
+
+                <p>Its mission is to bring hope to those with none and change the lives of everyone we work with, including their staff, donors, volunteers and partners.            
+                </p>  
+            </div>
+        </div>
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

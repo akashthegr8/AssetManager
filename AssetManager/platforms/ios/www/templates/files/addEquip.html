@@ -1,0 +1,101 @@
+<ion-view view-title="" >
+    <ion-nav-buttons side="right">
+       <!-- <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>-->
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+            <div class="item item-avatar">
+                <img src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAALIAAAAJGY4NzI5NDhiLTQzM2YtNDE4OS04MDdiLTg1N2I5Y2U1ZTMyNQ.jpg">
+                <h2Add Assets</h2>
+              
+            </div>
+            <div class="item item-body">
+                
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label" >Product Type</span>
+	                <select ng-model="equipment.product_type">
+                      <option>WebCam</option>
+                      <option selected>Laptop</option>
+                      <option>Printer</option>
+                      <option>KeyBoard</option>
+                      <option>Monitor</option>
+                      <option>CPU</option>
+                      <option>Projector</option>
+                      <option>Mobile</option>
+                      <option>Tavlet</option>
+                  </select>
+                </label>
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label" >Vendor</span>
+	                <select ng-model="equipment.product_vendor">
+                      <option value="Lenovo">Lenovo</option>
+                      <option selected>HP</option>
+                      <option>Panasonic</option>
+                      <option>Dell</option>
+                      
+                  </select>
+                </label>
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label" >Location</span>
+	                <select ng-model="equipment.product_location">
+                      <option>Bangalore-North</option>
+                      <option selected>Bangalore-East</option>
+                      <option name="South">Bangalore-South</option>
+                      <option>Hyderabad-West</option>
+                      <option>Delhi-Old</option>
+                      <option>Delhi-New</option>
+                      <option>Chennai</option>
+                  </select>
+                </label>
+                
+                
+                
+                
+                <label class = "item item-input ">
+                    <ion-radio ng-model="equipment.product_acquisition" ng-value="'Purchased'">Purchased</ion-radio>
+                    <ion-radio ng-model="equipment.product_acquisition" ng-value="'Donated'">Donated</ion-radio>
+                </label>
+                
+                <div ng-if="equipment.product_acquisition == 'Donated'">
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label" >Donor</span>
+	                <select  ng-model="equipment.product_donor">
+                      <option>SAP</option>
+                      <option selected>Samajik Suvidha Sangam</option>
+                      <option>ONGC</option>
+                      <option>Nehru Yuva Kendra</option>
+                    </select>
+                </label></div>
+                
+                <div ng-if="equipment.product_acquisition == 'Purchased'">
+                
+                <label class = "item item-input item-select">
+                     <span class="input-label" >Cost</span>
+                    <input  ng-model="equipment.product_cost" type="text" >
+                </label></div>
+                
+                
+                <button class="button icon icon-left ion-checkmark-round button-positive" ng-click="createEquip();")>
+                   Save
+                </button>
+                
+                <button class="button icon icon-left ion-close-round button-stable">
+                   Reset
+                </button>
+
+            
+            </div>
+        </div>
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

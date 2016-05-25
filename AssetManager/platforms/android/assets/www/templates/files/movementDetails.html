@@ -1,0 +1,20 @@
+<ion-view view-title="movement.id">
+  <ion-content class="padding">
+  	<h4>Movement initiated at:</h4>
+      <h6>{{movement.from}}</h6>
+    <h4>Movement directed to:</h4>
+      <h6>{{movement.to}}</h6>
+      <h4>Initiation Date:</h4>
+      <h6>{{movement.startDate}}</h6>
+      <h4 >Receive date:</h4>
+      <h6>{{movement.endDate}}</h6>
+      <ion-list>
+          <ion-item ng-repeat="item in movement.equipmentId" track by $index>
+              {{item.product_type}}
+              {{item.poduct_vendor}}
+              {{item.product_location}}
+              {{item.product_description}}
+          </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

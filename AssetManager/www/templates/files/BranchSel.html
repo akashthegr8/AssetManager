@@ -1,0 +1,51 @@
+<ion-view view-title="Bangalore branches">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+                <p>
+                   <big><b>Select Branch</b></big> 
+                </p>
+         
+            <div class="item item-body">
+
+                <div class="row">
+                            <button class="button button-outline">
+                
+             Bangalore-North
+                </button>
+          
+                              
+                            <button class="button button-outline">
+                
+             Bangalore-South
+                </button>
+                </div>
+                                <div class="row">
+                            <button class="button button-outline">
+                
+             Bangalore-East
+                </button>
+                            <button class="button button-outline">
+                
+             Bangalore-West
+                </button>
+                </div>
+
+
+</div>                           
+            </div>
+<div class="bar bar-footer">
+  <button class="button button-block button-positive" ng-click="launchcityassets()" data-ng-controller='LocselCtrl'>Track Bangalore city assets</button>
+</div>
+        
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

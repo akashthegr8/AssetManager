@@ -1,0 +1,38 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="menu-bttn button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">HoPe</h1>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <div class="list">
+                <div class="item item-divider">
+                    Menu
+                </div>
+            </div>
+            <a menu-close class="button button-block button-positive icon-right " value="submit" ng-click="addEquip()">Add Equipments</a>
+             <a menu-close class="button button-block button-positive icon-right " value="submit" ng-click="addDonor()">Add Donor</a>
+            <a menu-close class="button button-block button-positive icon-right " value="submit" ng-click="addSupplier()">Add Supplier</a>
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="createMovement()">Create Movement</a>
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="ruMovement()">Read/Update Movement</a>
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="allMovement()">All Movements</a>
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="checkAssets()">Check Assets @ Location</a>
+
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="About()">About</a>
+
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="listSupplier()">List Supplier</a>
+                <a menu-close class="button button-block button-positive icon-right" value="submit" ng-click="listDonors()">List Donors</a>
+
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

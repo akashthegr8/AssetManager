@@ -1,0 +1,17 @@
+<ion-view view-title="Supplier List">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="text-right">
+            <button id="btadd" class="button icon icon-center ion-plus-round button-positive" ng-click=></button>
+            <button id="btedit" class="button icon icon-center ion-edit button-positive"></button>
+            <button id="btdel" class="button icon icon-center ion-trash-a button-positive"></button>
+        </div>
+        <ion-list>
+            <div ng-repeat="supplier in supplierList">
+                <b>{{supplier.id}}  {{supplier.name}}</b>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

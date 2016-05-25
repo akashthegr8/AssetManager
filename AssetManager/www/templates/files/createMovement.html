@@ -1,0 +1,163 @@
+<ion-view view-title="">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+     <div class="item item-avatar">
+                <img src="img/logo.png">    
+                <h2>New Asset Movement</h2>
+              
+            </div>
+            
+     
+            <div class="item item-body">
+                
+                <div>
+                <label class = "item item-input item-select">
+                    <span class="input-label">Asset Origin Location : {{originlocation}}</span>
+	            </label>
+
+                <label class="item item-input item-stacked-label">
+
+                    <span class="input-label">Origin Location Address : {{originaddress}}</span>
+                  
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                <!--
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Origin Location Address (Line 2)</span>
+                    <input class="titleSearch" type="text" />
+                   
+                </label>-->
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">PIN Code : {{pincode}}</span>
+                    
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                </div>
+                
+<!--
+                <button class="button icon icon-left ion-checkmark-round button-positive" ng-controller="HomeCtrl" ng-click="scan();">
+                   Read QR-Code
+                </button>
+
+-->
+                
+                
+	<div style='background:red;display:table;margin:40% auto;padding:10px;color:white' ng-controller='BarcodeCtrl' ng-click='scan()'>
+        Click Here to Scan
+      </div>
+                <!--
+                <label class = "item item-input item-select">
+                    <span class="input-label">Movement Status</span>
+	                <select>
+                      <option>Shipped</option>
+                      <option selected>In Transit</option>
+                      <option>Received</option>
+                  </select>
+                </label>-->
+                
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label">Asset Destination Location</span>
+	                <select>
+                      <option>Bangalore-North</option>
+                      <option selected>Bangalore-East</option>
+                      <option>Bangalore-South</option>
+                      <option>Hyderabad-West</option>
+                      <option>Delhi-Old</option>
+                      <option>Delhi-New</option>
+                      <option>Chennai</option>
+                    </select>
+                </label>
+                
+                 <label class="item item-input item-stacked-label">
+                    <span class="input-label">Destination Location Address</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Destination Location Address (Line 2)</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">PIN Code</span>
+                    <input class="titleSearch" type="number" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Movement Date</span>
+                    <input class="titleSearch" type="date" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class = "item item-input item-select">
+                    <span class="input-label">Movement Type</span>
+	                <select>
+                      <option>Internal</option>
+                      <option selected>Purchased</option>
+                      <option>Donated</option>
+                  </select>
+                </label>
+                
+                <button class="button icon icon-left ion-checkmark-round button-positive">
+                   Save
+                </button>
+                
+                <button class="button icon icon-left ion-close-round button-stable">
+                   Reset
+                </button>
+
+            
+                
+                
+
+                    <div class="row header">
+                  <!--<div class="col"></div>-->
+                  <div class="col">ID</div>
+                  <div class="col">ProductType</div>
+                  <div class="col">Quantity</div>
+                  <div class="col">Cost</div>
+                  <div class="col">Status</div>
+                </div>
+                  <div class="row" ng-repeat="dataValue in $scope.ctrl">
+                  <!--<div class="col">{{dataValue.check}}</div>-->
+                  <div class="col">{{dataValue.ID}}</div>
+                  <div class="col">{{dataValue.ProductType}}</div>
+                  <div class="col">{{dataValue.Quantity}}</div>
+                  <div class="col">{{dataValue.Cost}}</div>
+                  <div class="col">{{dataValue.Status}}</div>
+                  
+                    
+                </div>
+                    
+                    
+                    
+                    <!--<div class="col"><button class="button" ng-click="ctrl.delete($index)">Delete</button></div>-->
+                
+                
+               
+            </div>
+        </div>
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,68 @@
+    <ion-view view-title="">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-hide="!ASSETMANAGER_RESULTS" ng-click="clearSearch()">Clear</button>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <div class="list card" ng-hide="ASSETMANAGER_RESULTS">
+            <div class="item item-body">
+               <label class="item item-input item-stacked-label">
+                    <span class="input-label">Donor Name</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Donor Address</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Donor Address (Line 2)</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">PIN Code</span>
+                    <input class="titleSearch" type="number" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email Id</span>
+                    <input class="titleSearch" type="text" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Phone</span>
+                    <input class="titleSearch" type="number" >
+                   <!--ng-disabled="mySearch.id" ng-model="mySearch.title" ng-keyup="$event.keyCode == 13 && doSearch(mySearch)"-->
+                </label>
+                
+                
+                <button class="button icon icon-left ion-checkmark-round button-positive">
+                   Save
+                </button>
+                
+                <button class="button icon icon-left ion-close-round button-stable">
+                   Reset
+                </button>
+
+            
+            </div>
+        </div>
+        <ion-list ng-hide="!ASSETMANAGER_RESULTS">
+            <a class="item item-thumbnail-left" ng-repeat="item in OMDB_RESULTS" href="#/app/details/{{item.imdbID}}">
+                <img ng-src="{{item.Poster}}">
+                <h2>{{item.Title}}</h2>
+                <p>{{item.Year}}</p>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>
